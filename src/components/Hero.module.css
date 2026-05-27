@@ -1,0 +1,52 @@
+@keyframes strike {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes wordIn {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+.strikePath {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.drawn {
+  animation: strike 800ms ease-out forwards;
+}
+
+.writing {
+  clip-path: inset(0 100% 0 0);
+  animation: wordIn 1.4s ease-out forwards;
+  opacity: 1;
+  transition: opacity 300ms ease-out;
+}
+
+.holding {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transition: opacity 300ms ease-out;
+}
+
+.fading {
+  clip-path: inset(0 0 0 0);
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawn {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .writing,
+  .holding,
+  .fading {
+    animation: none !important;
+    clip-path: inset(0 0 0 0) !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}

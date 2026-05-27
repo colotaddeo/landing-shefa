@@ -7,41 +7,10 @@ export default function Hero() {
   const { hero } = t;
 
   return (
-    <section className="px-6 md:px-[60px] pt-[100px] pb-32">
+    <section className="px-6 md:px-[60px] pt-[60px] pb-32">
       <div className="max-w-[1200px] mx-auto relative">
 
-        {/* Bubbles — right side, vertical stack */}
-        <div className="hidden md:flex flex-col gap-4 absolute top-0 right-0">
-          {hero.network.map((item) => (
-            <div key={item.name} className="relative group flex items-center justify-end">
-              {/* Tooltip — appears to the left */}
-              <div className="absolute right-full mr-4 pointer-events-none text-right
-                              opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0
-                              transition-all duration-200 ease-out whitespace-nowrap z-10">
-                <div className="text-[10px] tracking-[2.5px] text-shefa-text uppercase font-medium mb-0.5">
-                  {item.name}
-                </div>
-                <div className="text-[10px] text-shefa-muted font-light">
-                  {item.desc}
-                </div>
-              </div>
-
-              {/* Bubble */}
-              <div className="w-[68px] h-[68px] rounded-full border border-shefa-border bg-shefa-card
-                              flex items-center justify-center overflow-hidden cursor-default
-                              transition-all duration-300
-                              group-hover:border-shefa-accent/60 group-hover:shadow-[0_0_16px_rgba(201,165,92,0.15)]">
-                <img
-                  src={`/logos/${item.name.toLowerCase()}.png`}
-                  alt={item.name}
-                  className="w-10 h-10 object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <h1 className="font-serif text-[clamp(52px,8vw,110px)] leading-[1.05] tracking-[-1px] max-w-[900px] mb-16">
+        <h1 className="font-serif text-[clamp(36px,5.5vw,76px)] leading-[1.05] tracking-[-1px] max-w-[800px] mb-3 mx-auto text-center">
           {hero.h1a}{" "}
           <em className="italic text-shefa-accent">{hero.h1b}</em>{" "}
           {hero.h1c}{" "}
@@ -49,12 +18,12 @@ export default function Hero() {
           {hero.h1e}
         </h1>
 
-        <p className="text-[16px] text-shefa-muted font-light leading-[1.9] max-w-[540px] mb-20">
+        <p className="text-[14px] text-shefa-muted font-light leading-[1.6] max-w-[480px] mb-6 mx-auto text-center">
           {hero.sub}
         </p>
 
         {/* Financial chart divider */}
-        <div className="w-full mb-12 overflow-hidden">
+        <div className="w-full mb-6 overflow-hidden">
           <svg viewBox="0 0 1200 52" className="w-full h-[52px]" preserveAspectRatio="none">
             <defs>
               <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
@@ -67,23 +36,34 @@ export default function Hero() {
               fill="url(#chartFill)"
             />
             <polyline
-              points="0,42 55,42 85,18 115,34 155,6 190,28 225,14 260,36 298,7 332,26 368,4 402,22 438,13 472,39 508,19 544,31 578,9 614,27 650,17 684,36 720,5 756,23 790,13 826,40 862,19 898,9 932,28 966,15 1002,40 1042,21 1082,5 1122,27 1162,13 1200,21"
+              points="0,42 55,42 85,18 115,34 155,6 190,28 225,14 260,36 298,7 332,26 368,4 402,22 438,13 472,39 508,19 544,31 578,9 614,27 650,17 684,36 720,5 756,23 790,13 826,40 862,19 898,9 932,28 966,15 1002,40 1042,21 1082,5 1122,27 1162,13 L1200,21"
               fill="none"
               stroke="#30BCDB"
               strokeWidth="1"
               strokeOpacity="0.25"
             />
-          </svg>
-        </div>
+      </svg>
+       </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          {hero.stats.map((s) => (
-            <div key={s.label}>
-              <div className="font-serif text-[48px] leading-none text-shefa-text mb-2">{s.num}</div>
-              <div className="text-[11px] text-shefa-muted tracking-[2px] uppercase">{s.label}</div>
-            </div>
-          ))}
+        <div className="w-full mb-20 relative" style={{ aspectRatio: '16/9', maxHeight: '600px' }}>
+          <div
+            className="absolute inset-0 rounded-xl"
+            style={{
+              border: '2px solid rgba(48,188,219,0.5)',
+              boxShadow: '0 0 20px 4px rgba(48,188,219,0.25), 0 0 60px 8px rgba(48,188,219,0.1)',
+              filter: 'blur(0.5px)',
+              zIndex: -1,
+              pointerEvents: 'none',
+            }}
+          />
+          <iframe
+            src="https://www.youtube.com/embed/D1pDcu5Nmys?autoplay=1&mute=0&controls=1&loop=1&playlist=D1pDcu5Nmys"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full rounded-xl relative z-[1]"
+          ></iframe>
         </div>
 
       </div>

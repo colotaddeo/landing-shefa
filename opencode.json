@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "local-qwen/qwen3.5",
+  "provider": {
+    "local-qwen": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Qwen Local (192.168.240.17)",
+      "options": {
+        "baseURL": "http://192.168.240.17:11880/v1",
+        "apiKey": "dummy"
+      },
+      "models": {
+        "qwen3.5": {
+          "name": "Qwen 3.5 (local)"
+        }
+      }
+    }
+  }
+}

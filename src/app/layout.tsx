@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, DM_Serif_Display } from "next/font/google";
+import { Inter, DM_Serif_Display, Kalam } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 
@@ -18,6 +18,13 @@ const dmSerif = DM_Serif_Display({
   variable: "--font-dm-serif",
 });
 
+const kalam = Kalam({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-kalam",
+});
+
 export const metadata: Metadata = {
   title: "SHEFA — Retail · Blockchain · AI",
   description:
@@ -26,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={`${inter.variable} ${dmSerif.variable} ${kalam.variable}`}>
       <body className="bg-shefa-dark text-shefa-text antialiased font-sans">
         <LanguageProvider>{children}</LanguageProvider>
       </body>
