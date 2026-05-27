@@ -1,0 +1,42 @@
+.dotGrid {
+  background-image: radial-gradient(rgba(48, 188, 219, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 20%, transparent 100%);
+}
+
+/* ── Cyan wipe line ─────────────────────────────────────────────────────── */
+.wipeLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  background: linear-gradient(
+    to bottom,
+    transparent  0%,
+    #30BCDB     20%,
+    #30BCDB     80%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 24px  4px rgba(48, 188, 219, 0.8),
+    0 0 60px 12px rgba(48, 188, 219, 0.35);
+}
+
+/* trailing glow to the left of the line (already-wiped area) */
+.wipeLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(48, 188, 219, 0.35) 0%, transparent 100%);
+  filter: blur(8px);
+  pointer-events: none;
+}
