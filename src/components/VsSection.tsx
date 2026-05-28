@@ -46,7 +46,7 @@ export default function VsSection() {
             <div className="grid grid-cols-2 gap-3 mb-16">
               {vs.barriers.map((item, i) => (
                 <div key={i} className="p-4 rounded-sm flex flex-col gap-2"
-                  style={{ background: "rgba(15,15,22,0.9)", border: "1px solid rgba(48,188,219,0.15)", borderTop: "1px solid rgba(48,188,219,0.35)" }}>
+                  style={{ background: "var(--barrier-card-bg2)", border: "1px solid rgba(48,188,219,0.15)", borderTop: "1px solid rgba(48,188,219,0.35)" }}>
                   <span className="text-[10px] tracking-[2px] font-mono" style={{ color: "rgba(48,188,219,0.45)" }}>{item.n}</span>
                   <h4 className="text-[12px] font-medium text-shefa-text">{item.title}</h4>
                   <p className="text-[11px] text-shefa-muted font-light leading-[1.7]">{item.desc}</p>
@@ -101,9 +101,9 @@ export default function VsSection() {
         <div className="relative max-w-[1100px] mx-auto px-[60px]">
           {/* Eyebrow VS */}
           <div className="flex items-center justify-center gap-5 mb-14">
-            <div className="h-px flex-1 max-w-[120px]" style={{ background: "rgba(255,255,255,0.08)" }} />
+            <div className="h-px flex-1 max-w-[120px]" style={{ background: "var(--divider-alpha)" }} />
             <span className="text-[11px] tracking-[0.32em] text-shefa-muted uppercase select-none">VS</span>
-            <div className="h-px flex-1 max-w-[120px]" style={{ background: "rgba(255,255,255,0.08)" }} />
+            <div className="h-px flex-1 max-w-[120px]" style={{ background: "var(--divider-alpha)" }} />
           </div>
 
           {/* Two-column grid */}
@@ -121,7 +121,7 @@ export default function VsSection() {
                     key={i}
                     className="p-5 rounded-sm flex flex-col gap-2"
                     style={{
-                      background:     "rgba(15,15,22,0.8)",
+                      background:     "var(--barrier-card-bg)",
                       border:         "1px solid rgba(48,188,219,0.15)",
                       borderTop:      "1px solid rgba(48,188,219,0.35)",
                       backdropFilter: "blur(8px)",

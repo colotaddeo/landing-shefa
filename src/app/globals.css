@@ -2,8 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --shefa-dark:   #08080d;
+  --shefa-card:   #0f0f16;
+  --shefa-border: #1e1e28;
+  --shefa-text:   #e8eef0;
+  --shefa-muted:  #586470;
+  --shefa-accent: #30BCDB;
+  --shefa-hover:  #4DCDE8;
+  --barrier-card-bg:  rgba(15, 15, 22, 0.8);
+  --barrier-card-bg2: rgba(15, 15, 22, 0.9);
+  --divider-alpha:    rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] {
+  --shefa-dark:   #f4f5f7;
+  --shefa-card:   #ffffff;
+  --shefa-border: #dde0e6;
+  --shefa-text:   #0d0d14;
+  --shefa-muted:  #7a8494;
+  --shefa-accent: #0d9ab5;
+  --shefa-hover:  #0b88a0;
+  --barrier-card-bg:  rgba(0, 0, 0, 0.04);
+  --barrier-card-bg2: rgba(0, 0, 0, 0.05);
+  --divider-alpha:    rgba(0, 0, 0, 0.08);
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+}
+
+body {
+  transition: background-color 200ms ease, color 200ms ease;
 }
 

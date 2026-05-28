@@ -6,13 +6,13 @@ const config: Config = {
     extend: {
       colors: {
         shefa: {
-          dark:   "#08080d",
-          card:   "#0f0f16",
-          border: "#1e1e28",
-          text:   "#e8eef0",
-          muted:  "#586470",
-          accent: "#30BCDB",
-          hover:  "#4DCDE8",
+          dark:   "var(--shefa-dark)",
+          card:   "var(--shefa-card)",
+          border: "var(--shefa-border)",
+          text:   "var(--shefa-text)",
+          muted:  "var(--shefa-muted)",
+          accent: "var(--shefa-accent)",
+          hover:  "var(--shefa-hover)",
         },
       },
       fontFamily: {
