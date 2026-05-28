@@ -1,17 +1,42 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 
 export default function Hero() {
   const { t } = useLang();
   const { hero } = t;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [src, setSrc] = useState<string | null>(null);
+  const [observed, setObserved] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSrc(
+            "https://www.youtube.com/embed/D1pDcu5Nmys?autoplay=1&mute=1&controls=1&loop=1&playlist=D1pDcu5Nmys"
+          );
+          observer.disconnect();
+          setObserved(true);
+        }
+      },
+      { threshold: 0.9 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="px-6 md:px-[60px] pt-[60px] pb-32">
       <div className="max-w-[1200px] mx-auto relative">
 
-        <h1 className="font-serif text-[clamp(36px,5.5vw,76px)] leading-[1.05] tracking-[-1px] max-w-[800px] mb-3 mx-auto text-center">
-          {hero.h1a}{" "}
+        <h1 className="font-serif text-[clamp(40px,6vw,88px)] leading-[1.05] tracking-[-1px] max-w-[1200px] mb-3 mx-auto text-center">
+          {hero.h1a}<br />
           <em className="italic text-shefa-accent">{hero.h1b}</em>{" "}
           {hero.h1c}{" "}
           <em className="italic text-shefa-accent">{hero.h1d}</em>{" "}
@@ -42,28 +67,43 @@ export default function Hero() {
               strokeWidth="1"
               strokeOpacity="0.25"
             />
-      </svg>
-       </div>
+          </svg>
+        </div>
 
-        <div className="w-full mb-20 relative" style={{ aspectRatio: '16/9', maxHeight: '600px' }}>
+        {/* Video — loads on scroll, plays auto */}
+        <div ref={containerRef} className="mb-20 relative" style={{ maxHeight: '700px', aspectRatio: '16/9' }}>
+          {/* Glow effect — behind, no pointer interaction */}
           <div
-            className="absolute inset-0 rounded-xl"
+            className="absolute -inset-0 rounded-xl"
             style={{
               border: '2px solid rgba(48,188,219,0.5)',
               boxShadow: '0 0 20px 4px rgba(48,188,219,0.25), 0 0 60px 8px rgba(48,188,219,0.1)',
               filter: 'blur(0.5px)',
-              zIndex: -1,
+              zIndex: 0,
               pointerEvents: 'none',
             }}
           />
-          <iframe
-            src="https://www.youtube.com/embed/D1pDcu5Nmys?autoplay=1&mute=0&controls=1&loop=1&playlist=D1pDcu5Nmys"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="w-full h-full rounded-xl relative z-[1]"
-          ></iframe>
+          {/* Video — on top, clickable */}
+          <div className="relative z-10 rounded-xl overflow-hidden">
+            {src && (
+              <iframe
+                src={src}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full"
+                style={{ aspectRatio: '16/9' }}
+              ></iframe>
+            )}
+          </div>
+          {/* Placeholder — logo + SHEFA text */}
+          {!observed && (
+            <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 pointer-events-none">
+              <img src="/shefa-logo.png" alt="Shefa" className="w-12 h-12" />
+              <span className="text-4xl font-light tracking-[0.2em]" style={{ color: 'var(--shefa-text)' }}>SHEFA</span>
+            </div>
+          )}
         </div>
 
       </div>

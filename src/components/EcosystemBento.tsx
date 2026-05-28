@@ -25,9 +25,9 @@ export default function EcosystemBento() {
             className="font-serif text-[clamp(36px,4vw,56px)] leading-[1.1]"
           >
             {ecosystem.h2a}{" "}
-            <em className="italic text-[#22d3ee]">{ecosystem.h2b}</em>{" "}
+            <em className="italic text-shefa-accent">{ecosystem.h2b}</em>{" "}
             {ecosystem.h2c}{" "}
-            <em className="italic text-[#22d3ee]">{ecosystem.h2d}</em>
+            <em className="italic text-shefa-accent">{ecosystem.h2d}</em>
           </h2>
         </div>
 

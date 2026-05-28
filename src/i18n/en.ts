@@ -76,7 +76,7 @@ export const en = {
      ],
    },
    vs: {
-     s1h2a: "The old model is broken",
+     s1h2a: "Conventional VC",
      s1h2b: "retail",
      s1h2c: "infrastructure",
      barriers: [
