@@ -4,6 +4,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "@/context/ThemeContext";
+import { useLang } from "@/context/LanguageContext";
 import type { CompanyData } from "@/data/companies";
 
 const ACCENT_BY_TAG: Record<string, string> = {
@@ -20,7 +22,13 @@ const ACCENT_BY_TAG: Record<string, string> = {
 };
 
 export default function CompanyDetailPage({ company }: { company: CompanyData }) {
-  const primaryAccent = ACCENT_BY_TAG[company.tags[0]] ?? "text-shefa-accent border-shefa-accent";
+  const { lang } = useLang();
+  const { theme } = useTheme();
+  const logoSrc = (theme === "light" && company.logoLight) ? company.logoLight : company.logo;
+  const displayTags = (lang === "es" && company.tagsEs) ? company.tagsEs : company.tags;
+  const displayTagline = (lang === "es" && company.taglineEs) ? company.taglineEs : company.tagline;
+  const displayMetrics = (lang === "es" && company.metricsEs) ? company.metricsEs : company.metrics;
+  const primaryAccent = ACCENT_BY_TAG[displayTags[0]] ?? "text-shefa-accent border-shefa-accent";
 
   return (
     <>
@@ -43,7 +51,7 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
 
           {/* Tags */}
           <div className="flex flex-wrap items-center gap-2 mb-6">
-            {company.tags.map((tag) => (
+            {displayTags.map((tag) => (
               <span
                 key={tag}
                 className={`text-[10px] tracking-[3px] uppercase border px-2.5 py-1 ${ACCENT_BY_TAG[tag] ?? "text-shefa-muted border-shefa-border"}`}
@@ -60,9 +68,9 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
 
           {/* Logo / Name */}
           <div className="mb-6">
-            {company.logo ? (
+            {logoSrc ? (
               <img
-                src={company.logo}
+                src={logoSrc}
                 alt={company.name}
                 className={`${company.logoHeight ?? "h-16"} w-auto object-contain`}
               />
@@ -73,7 +81,7 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
 
           {/* Tagline */}
           <p className="text-[clamp(18px,2.2vw,26px)] text-shefa-muted font-light leading-[1.5] max-w-[620px] mb-10">
-            {company.tagline}
+            {displayTagline}
           </p>
 
           {/* Meta row */}
@@ -97,7 +105,7 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
         {/* ── METRICS ─────────────────────────────────────────── */}
         <section className="px-6 md:px-[60px] py-14 max-w-[1200px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-shefa-border">
-            {company.metrics.map((m) => (
+            {displayMetrics.map((m) => (
               <div key={m.label} className="md:px-10 first:pl-0 last:pr-0">
                 <p className={`font-serif text-[clamp(32px,3.5vw,48px)] leading-none mb-2 ${primaryAccent.split(" ")[0]}`}>
                   {m.num}
@@ -201,7 +209,7 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
                 Reach out to learn more about this company and investment opportunities within the SHEFA ecosystem.
               </p>
               <a
-                href="mailto:rodrigo@bouldertech.fi"
+                href="/contact"
                 className="inline-block text-[11px] tracking-[2px] uppercase text-shefa-accent border-b border-shefa-accent pb-px hover:text-shefa-hover hover:border-shefa-hover transition-colors"
               >
                 Get in touch →

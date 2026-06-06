@@ -5,38 +5,189 @@
   -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 20%, transparent 100%);
 }
 
-/* ── Cyan wipe line ─────────────────────────────────────────────────────── */
-.wipeLine {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  z-index: 10;
-  opacity: 0;
-  pointer-events: none;
-  will-change: transform, opacity;
-  background: linear-gradient(
-    to bottom,
-    transparent  0%,
-    #30BCDB     20%,
-    #30BCDB     80%,
-    transparent 100%
-  );
-  box-shadow:
-    0 0 24px  4px rgba(48, 188, 219, 0.8),
-    0 0 60px 12px rgba(48, 188, 219, 0.35);
+/* ── Table shell ────────────────────────────────────────────────────────── */
+.table {
+  border: 1px solid rgba(48, 188, 219, 0.18);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-/* trailing glow to the left of the line (already-wiped area) */
-.wipeLine::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 80px;
-  height: 100%;
-  background: linear-gradient(to left, rgba(48, 188, 219, 0.35) 0%, transparent 100%);
-  filter: blur(8px);
-  pointer-events: none;
+/* ── Row grids ──────────────────────────────────────────────────────────── */
+.headerRow,
+.dataRow {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.85fr) 1fr 1fr;
+}
+
+.headerRow {
+  border-bottom: 1px solid rgba(48, 188, 219, 0.2);
+}
+
+.dataRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.dataRow:last-child {
+  border-bottom: none;
+}
+
+.rowEven {
+  background: rgba(255, 255, 255, 0.018);
+}
+
+/* ── Cells ──────────────────────────────────────────────────────────────── */
+.labelCell,
+.vcCell,
+.shefaCell {
+  padding: 18px 22px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.labelCell {
+  border-right: 1px solid rgba(48, 188, 219, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  display: flex;
+  align-items: center;
+}
+
+.vcCell {
+  border-right: 1px solid rgba(48, 188, 219, 0.1);
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.shefaCell {
+  background: rgba(48, 188, 219, 0.05);
+  border-left: 2px solid rgba(48, 188, 219, 0.75);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ── Header-row overrides ───────────────────────────────────────────────── */
+.headerRow .labelCell {
+  padding: 13px 22px;
+}
+
+.headerRow .vcCell {
+  padding: 13px 22px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.28);
+  display: flex;
+  align-items: center;
+}
+
+.headerRow .shefaCell {
+  padding: 13px 22px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #30BCDB;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Light theme ────────────────────────────────────────────────────────── */
+:global([data-theme="light"]) .labelCell {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+:global([data-theme="light"]) .vcCell {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+:global([data-theme="light"]) .shefaCell {
+  color: rgba(0, 0, 0, 0.88);
+}
+
+:global([data-theme="light"]) .headerRow .vcCell {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+:global([data-theme="light"]) .dataRow {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+:global([data-theme="light"]) .rowEven {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+:global([data-theme="light"]) .vcCell::before {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .table {
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .headerRow {
+    display: none;
+  }
+
+  .dataRow {
+    display: block;
+    border: 1px solid rgba(48, 188, 219, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .rowEven {
+    background: transparent;
+  }
+
+  .labelCell {
+    border-right: none;
+    border-bottom: 1px solid rgba(48, 188, 219, 0.12);
+    padding: 10px 14px;
+    font-size: 10px;
+    display: block;
+  }
+
+  .vcCell,
+  .shefaCell {
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 1.55;
+    display: block;
+  }
+
+  .vcCell {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .vcCell::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 3px;
+    font-weight: 600;
+  }
+
+  .shefaCell::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #30BCDB;
+    margin-bottom: 3px;
+    font-weight: 600;
+  }
 }

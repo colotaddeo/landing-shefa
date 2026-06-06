@@ -19,7 +19,7 @@ await page.goto('http://localhost:3001');
 await page.waitForLoadState('networkidle');
 await page.waitForTimeout(500);
 
-// EcosystemBento section
+// EcosystemMap section
 const ecosystem = page.locator('section[aria-labelledby="ecosystem-heading"]');
 const endeavorLogo = ecosystem.locator('img[alt="Endeavor"]');
 const arcapLogo = ecosystem.locator('img[alt="ARCAP"]');

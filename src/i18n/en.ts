@@ -1,13 +1,15 @@
 export const en = {
   nav: {
-    thesis:    "THESIS",
-    formula:   "APPROACH",
+    ecosystem: "ECOSYSTEM",
+    value:     "VALUE",
+    vs:        "VS. PRIVATE FUND",
     portfolio: "PORTFOLIO",
     team:      "TEAM",
     contact:   "CONTACT",
-    investors: "INVESTORS",
+    investors: "Get in touch",
   },
   hero: {
+    videoId:  "qxUCmzU1LPc",
     tag:      "RETAIL · BLOCKCHAIN · AI",
     h1a:      "Driving the future where",
     h1b:      "retail",
@@ -51,6 +53,21 @@ export const en = {
         isNew: true,
       },
     ],
+    diagram: {
+      headline:      "We return control to retailers",
+      subheadline:   "When a customer shops online, the platform owns the relationship with the customer. It knows what they searched for, what they care about, and what they bought. The retailer has no access to these insights.",
+      cliente:         "Client",
+      retailer:        "Retailer",
+      clienteLabel:    "CLIENTE",
+      retailerLabel:   "RETAILER",
+      marketplace:     "Marketplace",
+      intermediario:   "intermediary",
+      conIntermediario:"with intermediary",
+      conTucan:        "with TUCÁN",
+      tucanLabel:      "TUCÁN · direct · ~5%",
+      pillMoney:       "Money",
+      pillFidelity:    "Fidelity",
+    },
   },
   formula: {
      tag:  "OUR APPROACH",
@@ -76,51 +93,44 @@ export const en = {
      ],
    },
    vs: {
-     s1h2a: "Conventional VC",
-     s1h2b: "retail",
-     s1h2c: "infrastructure",
-     barriers: [
+     eyebrow: "SHEFA STRUCTURE",
+     title: "Why a Public Holding, not a Private Fund?",
+     subtitle: "Long-term value creation aligned with investor returns",
+     col1: "VC Fund",
+     col2: "SHEFA Holding",
+     rows: [
+        {
+          label: "Investor Accessibility",
+          vc: "High ticket, restricted access, few entry windows",
+          shefa: "From 1 share, accessible ticket",
+        },
+        {
+          label: "Fund deployment",
+          vc: "<em>Spray and Pray</em>",
+          shefa: "Carefully chosen companies, deeply supported",
+        },
        {
-         n: "01",
-         title: "Fragmented operators",
-         desc: "Retail is run by disconnected operators who own a single mall, a single brand, or a single route.",
+         label: "Investment format",
+         vc: "SAFEs within third-party rounds",
+         shefa: "Ad-hoc agreements with protective provisions",
        },
        {
-         n: "02",
-         title: "No shared data layer",
-         desc: "Purchase behavior, foot traffic, and loyalty data live in silos — no one sees the full journey.",
+         label: "Business involvement",
+         vc: "Pressure to achieve exits",
+         shefa: "Increase Net Asset Value",
        },
        {
-         n: "03",
-         title: "Slow, expensive capital",
-         desc: "Small retailers and startups face weeks of paperwork, high spreads, and opaque terms to get funding.",
-       },
-     ],
-     s2h2a: "SHEFA unifies it all",
-     s2h2b: "retail",
-     s2h2c: "infrastructure",
-     advantages: [
-       {
-         n: "01",
-         title: "One integrated network",
-         desc: "IRSA's malls, Tucán's e-commerce, APPA's loyalty, and Avenida's marketplace — all connected.",
-       },
-       {
-         n: "02",
-         title: "Unified data & loyalty",
-         desc: "Real-time consumer data flows across the ecosystem. One loyalty currency, one identity.",
-       },
-       {
-         n: "03",
-         title: "Capital where it's needed",
-         desc: "BoulderTech tokenization, stablecoin payments, and flexible financing — fast, transparent, on-chain.",
+         label: "Liquidity structure",
+          vc: "Fixed term (7–10 years)",
+         shefa: "Permanent, via holding listing",
        },
      ],
    },
   portfolio: {
-    tag:  "PORTFOLIO",
-    h2:   "Our companies",
-    desc: "A complementary ecosystem solving key challenges across retail, fintech, and Web3.",
+    tag:         "PORTFOLIO",
+    h2:          "Our companies",
+    mobileTitle: "Our Portfolio",
+    desc: "We are an investment vehicle focused on backing and accelerating companies that are transforming retail, combining the strength of the IRSA & Cresud Group with the agility of an entrepreneurial model.",
     companies: [
       {
         initials: "A",
@@ -170,10 +180,11 @@ export const en = {
   },
   ecosystem: {
      eyebrow:    "ECOSYSTEM",
-     h2a:        "The power of ",
-     h2b:        "synergy",
-     h2c:        "between ",
-     h2d:        "infrastructure",
+     subtitle:   "We are an investment vehicle focused on backing and accelerating companies that are transforming retail, combining the strength of the IRSA & Cresud Group with the agility of an entrepreneurial model.",
+     h2a:        "The ",
+     h2b:        "critical mass",
+     h2c:        " powering ",
+     h2d:        "retail",
      irsa: {
        anchor: "Anchor Partner",
        desc:   "IRSA owns and operates 16 premium shopping centers across Argentina. SHEFA's startups integrate directly into IRSA's physical ecosystem.",
@@ -210,15 +221,61 @@ export const en = {
        label:   "MERCHANTS",
        caption: "Tucán's logistics and checkout infrastructure supports over 3,000 merchants nationwide.",
      },
-   },
+    partnersEyebrow: "STRATEGIC PARTNERS",
+    netTitle: "Our Unique Network",
+    net1Num: "16",       net1Label: "Premium Malls",
+    net2Num: "+1,500",   net2Label: "Stores",
+    net3Num: "+700",     net3Label: "Local & intl. brands",
+    net4Num: ">$2.3B",   net4Label: "Annual sales (USD)",
+    net5Num: "+6M",      net5Label: "Monthly visits",
+    net6Num: ">40K",     net6Label: "Cars / day",
+    net7Num: ">6M",      net7Label: "Annual tickets",
+    cap1Label: "Advertising",          cap1Desc: "Campaigns powered by real mall traffic data.",
+    cap2Label: "Omnichannel Ecommerce", cap2Desc: "Click & collect, store pickup, and coordinated deliveries.",
+    cap3Label: "Collections",          cap3Desc: "Payment terminals integrated across the ecosystem.",
+    cap4Label: "Last Mile",            cap4Desc: "Last-mile logistics from stores to end consumers.",
+    cap5Label: "Payments & Credits",   cap5Desc: "Financing and wallets for shoppers and brands.",
+    cap6Label: "Loyalty",              cap6Desc: "Loyalty programs and active customer retention.",
+    map: {
+      hubLabel: "SHEFA",
+      arcEcosystem: "ECOSYSTEM",
+      arcBusiness: "BUSINESS OPPORTUNITIES",
+      comingSoon: "COMING SOON",
+      pillLabels: [
+        "56M tickets / year",
+        "16 IRSA malls",
+        "1,500 stores",
+        ">6M visits / month",
+        "40k cars / day",
+        "<700 brands",
+        "22M clicks / year",
+        "1M orders / year",
+        "4M ABC1 active users",
+        "Workplace by IRSA co-founders",
+        "Endeavor Members",
+        "ARCAP Members",
+      ],
+      iconLabels: [
+        "User loyalty",
+        "Last mile",
+        "Payments",
+        "Credits",
+        "Collections",
+        "Omnichannel Ecommerce",
+        "Advertising",
+        "Circular Economy",
+        "Insurance",
+      ],
+    },
+  },
    team: {
      tag:  "TEAM",
      h2:   "Leadership",
      desc: "Combined experience in real estate, retail tech, blockchain, and venture capital.",
      members: [
-       { initials: "BE", name: "Ben Elsztain",    role: "MANAGING PARTNER",   colorKey: "accent" },
-       { initials: "RS", name: "Ricardo Schulte",  role: "INVESTMENT OFFICER", colorKey: "retail" },
-       { initials: "RB", name: "Rodrigo Benzaquen", role: "MANAGING PARTNER", colorKey: "blockchain", isNew: true },
+       { initials: "BE", name: "Ben Elsztain",    role: "MANAGING PARTNER",   colorKey: "accent",      linkedin: "https://www.linkedin.com/in/ben-elsztain-a23537ba/" },
+       { initials: "RS", name: "Ricardo Schulte",  role: "INVESTMENT OFFICER", colorKey: "retail",     linkedin: "https://www.linkedin.com/in/ricardoschulte/" },
+       { initials: "RB", name: "Rodrigo Benzaquen", role: "MANAGING PARTNER", colorKey: "blockchain", isNew: true, linkedin: "https://www.linkedin.com/in/rbenzaquen/" },
      ],
    },
   cta: {
@@ -226,6 +283,73 @@ export const en = {
     desc:   "We're one message away from creating value and transforming the future together.",
     btn:    "GET IN TOUCH",
     email:  "rodrigo@bouldertech.fi",
+  },
+  contact: {
+    h2:          "Get in touch",
+    desc:        "We're one message away from creating value and transforming the future together.",
+    nameLabel:   "Full name",
+    companyLabel:"Company",
+    emailLabel:  "Email",
+    messageLabel:"Message",
+    submit:      "SEND",
+    success:     "Message sent successfully",
+    error:       "There was an error sending your message. Please try again.",
+    privacyLabel: "I have read and accept the {{link}}",
+    privacyLink:  "Privacy Policy",
+    privacyTitle: "Privacy Policy",
+    privacyText: `Last updated: June 27, 2025
+
+At Shefa, we understand the importance of protecting the privacy and personal data of those who visit our website. That is why we adopt measures to ensure that the information we collect is treated transparently, securely, and in accordance with applicable regulations.
+
+1. Who is responsible for the processing of data?
+
+SHEFA Holding LLC, domiciled at 3411 Silverside Road, Rodney Building #104, Wilmington, Delaware, United States, is responsible for the processing of personal data collected through this website. You can contact us by email at: [contact email].
+
+2. What data do we collect?
+
+In general, you can browse our site without providing us with personal data. However, we may collect: contact data (first and last name, email address, company) when users write to us through contact forms or via email. Navigation data, such as IP address, browser type, device, or browsing behavior, through cookies or analytics tools. Such data is not linked to the rest of your personal data.
+
+3. For what purpose do we process the data?
+
+We process personal data only to: respond to inquiries sent through the form or to the institutional email. maintain institutional contact with allies, suppliers, or potential parties interested in our ecosystem of companies. analyze website usage and improve its functionality.
+
+4. What is the legal basis for processing?
+
+Depending on the case, processing is based on: your consent, when you voluntarily complete a form or accept cookies. our legitimate interest, when we analyze site usage to improve its performance.
+
+5. Do we share your data?
+
+We do not sell or transfer your personal data. However, we may share them with: companies in the Shefa ecosystem, if the inquiry relates to any of them. technological service providers who provide web hosting, security, or analytics services (for example, Google Analytics), always under confidentiality agreements and with appropriate protection measures.
+
+6. Use of cookies and similar technologies
+
+This site may use first-party or third-party cookies for technical or analytical purposes. If you do not wish to install these cookies, you can delete or block them from your internet browser.
+
+7. International data transfers
+
+If any of our technology service providers store or process data outside the country, we make sure that they comply with adequate data protection guarantees, either through standard contractual clauses or other valid mechanisms. However, by completing a form on our website, you consent to the transfer of such data to the United States, a country that does not have an adequate level of data protection.
+
+8. What are your rights?
+
+As the owner of your data, you have the right to: access the data we hold about you. request its rectification, updating, or deletion. object to processing or request its limitation. withdraw your consent at any time (without affecting the lawfulness of prior processing). To exercise your rights, you can write to us at: [contact email]. The Shefa data controller must verify your identity before fulfilling your request, to avoid providing your data to unauthorized third parties.
+
+9. How long do we keep the data?
+
+We will retain your data only for as long as necessary to fulfill the purposes informed or while an active institutional relationship exists. They will then be securely deleted or anonymized.
+
+10. Changes to this policy
+
+We reserve the right to modify this Privacy Policy to adapt it to regulatory changes or improvements in our processes. We recommend reviewing it periodically. Modifications will take effect upon their publication on this site.`,
+  },
+  portfolioDetail: {
+   ctaH2:    "Interested in backing the next generation of retail innovators?",
+    ctaBtn:   "Get in touch",
+    ctaEmail: "rodrigo@bouldertech.fi",
+    link:     "Go back",
+    about:    "About",
+    founder:  "Founder",
+    founders: "Founders",
+    product:  "Product",
   },
   footer: {
     copy:    "Shefa Holdings® 2026 — All rights reserved",

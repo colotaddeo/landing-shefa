@@ -1,0 +1,44 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: #0A66C2;
+}
+
+.inner {
+  transition: transform 0.35s ease, filter 0.35s ease, opacity 0.35s ease;
+  will-change: transform, filter;
+}
+
+.card:hover .inner {
+  transform: scale(0.88);
+  filter: blur(3px);
+  opacity: 0.4;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.linkedinIcon {
+  width: 52px;
+  height: 52px;
+  color: #0A66C2;
+  filter: drop-shadow(0 0 16px rgba(10, 102, 194, 0.5));
+}
