@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/context/LanguageContext";
+import PageSection from "@/components/PageSection";
 
 export default function Hero() {
   const { t } = useLang();
@@ -14,8 +15,9 @@ export default function Hero() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          const id = hero.videoId;
           setSrc(
-            "https://www.youtube.com/embed/D1pDcu5Nmys?autoplay=1&mute=1&controls=1&loop=1&playlist=D1pDcu5Nmys"
+            `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&loop=1&playlist=${id}`
           );
           observer.disconnect();
           setObserved(true);
@@ -31,9 +33,18 @@ export default function Hero() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (observed) {
+      const id = hero.videoId;
+      setSrc(
+        `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&loop=1&playlist=${id}`
+      );
+    }
+  }, [hero.videoId]);
+
   return (
-    <section className="px-6 md:px-[60px] pt-[60px] pb-32">
-      <div className="max-w-[1200px] mx-auto relative">
+    <section className="pt-[60px] pb-32">
+      <PageSection className="relative">
 
         <h1 className="font-serif text-[clamp(40px,6vw,88px)] leading-[1.05] tracking-[-1px] max-w-[1200px] mb-3 mx-auto text-center">
           {hero.h1a}<br />
@@ -99,14 +110,14 @@ export default function Hero() {
           </div>
           {/* Placeholder — logo + SHEFA text */}
           {!observed && (
-            <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 pointer-events-none">
+            <div className="absolute inset-0 z-20 flex items-start justify-center gap-4 pt-32 pointer-events-none">
               <img src="/shefa-logo.png" alt="Shefa" className="w-12 h-12" />
               <span className="text-4xl font-light tracking-[0.2em]" style={{ color: 'var(--shefa-text)' }}>SHEFA</span>
             </div>
           )}
         </div>
 
-      </div>
+      </PageSection>
     </section>
   );
 }

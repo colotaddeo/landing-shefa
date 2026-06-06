@@ -13,6 +13,21 @@
         "qwen3.5": {
           "name": "Qwen 3.5 (local)"
         }
+                
+      }
+    },
+    "local-kimi": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Kimi Local (192.168.240.15)",
+      "options": {
+        "baseURL": "http://192.168.240.15:11434/v1",
+        "apiKey": "dummy"
+      },
+      "models": {
+        "kimi-k2.6:cloud": {
+          "name": "kimi-k2.6:cloud"
+        }
+                
       }
     }
   }
