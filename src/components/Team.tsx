@@ -44,7 +44,7 @@ export default function Team() {
                 <div className="px-6 py-5 text-center">
                   <p className="font-serif text-[22px] leading-tight mb-1">{m.name}</p>
                   <p className="text-[10px] tracking-[2px] text-shefa-accent uppercase">{m.role}</p>
-                  {m.bio && <p className="text-[12px] text-shefa-muted leading-[1.7] mt-3">{m.bio}</p>}
+                  {'bio' in m && m.bio && <p className="text-[12px] text-shefa-muted leading-[1.7] mt-3">{(m as typeof m & { bio: string }).bio}</p>}
                 </div>
               </div>
               <div className={styles.overlay}>
