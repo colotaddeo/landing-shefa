@@ -87,7 +87,9 @@ export default function Portfolio() {
       <div className="h-px bg-shefa-border max-w-[1200px] mx-auto" />
       <section id="portfolio" className={styles.section} ref={sectionRef}>
         <div className={styles.sticky}>
-          <h2 className={styles.bgTitle}>Our<br />Portfolio</h2>
+          <h2 className={styles.bgTitle}>
+            {portfolio.mobileTitle.split(" ")[0]}<br />{portfolio.mobileTitle.split(" ")[1]}
+          </h2>
 
           <h2 className="md:hidden font-serif italic font-light text-[clamp(32px,8vw,48px)] leading-[1.1] text-shefa-text text-center mb-8">
             {portfolio.mobileTitle}
