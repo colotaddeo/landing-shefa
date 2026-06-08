@@ -245,24 +245,15 @@ export default function Thesis() {
             <g>
               <text
                 x="550"
-                y="205"
+                y="220"
                 textAnchor="middle"
+                dominantBaseline="middle"
                 style={{ fill: "var(--shefa-text)" }}
                 fontSize="13"
                 fontFamily="Inter, sans-serif"
                 fontWeight="600"
               >
                 {thesis.diagram.marketplace}
-              </text>
-              <text
-                x="550"
-                y="225"
-                textAnchor="middle"
-                fill="#586470"
-                fontSize="11"
-                fontFamily="Inter, sans-serif"
-              >
-                {thesis.diagram.intermediario}
               </text>
             </g>
           </svg>
@@ -445,18 +436,13 @@ export default function Thesis() {
                 stroke="var(--shefa-border)"
                 strokeWidth="1"
               />
-              <text x="190" y="398"
+              <text x="190" y="405"
                 textAnchor="middle"
+                dominantBaseline="middle"
                 style={{ fill: "var(--shefa-text)" }}
                 fontSize="13" fontFamily="Inter, sans-serif" fontWeight="600"
               >
                 {thesis.diagram.marketplace}
-              </text>
-              <text x="190" y="418"
-                textAnchor="middle"
-                fill="#586470" fontSize="11" fontFamily="Inter, sans-serif"
-              >
-                {thesis.diagram.intermediario}
               </text>
             </g>
           </svg>

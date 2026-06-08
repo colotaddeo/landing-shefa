@@ -8,7 +8,7 @@ import styles from "./EcosystemMap.module.css";
 
 const CX = 627;
 const CY = 597;
-const RING2_R = 310;
+const RING2_R = 270;
 
 // 9 visible stop positions on ring 2: clockwise from left (180°) to right (0°)
 // Position 9 is off-screen (invisible transit slot)
@@ -108,10 +108,10 @@ const PILL_IMAGES: { imageSrc?: string; imageSrcLight?: string; extraWidth?: num
 
 /* ── Icon-pill metadata (position + icon, no label) ────────────── */
 const ICON_PILL_META = [
-  { x: 115,  y: 403, disabled: false },
+  { x: 547,  y: 92,  disabled: false },
   { x: 235,  y: 236, disabled: false },
   { x: 330,  y: 119, disabled: false },
-  { x: 547,  y: 92,  disabled: true },
+  { x: 115,  y: 403, disabled: true },
   { x: 922,  y: 275, disabled: false },
   { x: 764,  y: 141, disabled: false },
   { x: 1023, y: 568, disabled: false },
@@ -270,7 +270,7 @@ export default function EcosystemMap() {
               <filter id="iconPillGlow" x="-20%" y="-20%" width="140%" height="140%">
                 <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#30BCDB" floodOpacity="0.2" />
               </filter>
-              <path id="ecosystem-arc" d="M 515 513 A 130 130 0 0 1 741 513" />
+              <path id="ecosystem-arc" d="M 513 258 A 270 270 0 0 1 741 258" />
               <path id="business-arc" d="M 389 125 A 476 476 0 0 1 865 125" />
             </defs>
 
@@ -327,7 +327,7 @@ export default function EcosystemMap() {
             <text
               fontFamily="Inter, sans-serif"
               fontSize="13"
-              fill="#30BCDB"
+              fill="#586470"
               letterSpacing="4"
             >
               <textPath

@@ -62,7 +62,7 @@ export const es: Lang = {
       retailer:        "Retailer",
       clienteLabel:    "CLIENTE",
       retailerLabel:   "RETAILER",
-      marketplace:     "Marketplace",
+      marketplace:     "Grandes Plataformas",
       intermediario:   "intermediario",
       conIntermediario:"con intermediario",
       conTucan:        "con TUCÁN",
@@ -96,7 +96,7 @@ export const es: Lang = {
   },
   vs: {
       eyebrow: "ESTRUCTURA SHEFA",
-      title: "¿Por qué Holding Pública, y no Fondo Privado?",
+      title: "¿Por qué Shefa es una Holding y no un fondo? ¿Y por qué hará oferta pública?",
       subtitle: "Creación de valor en el largo plazo alineada con retorno para inversores",
       col1: "Fondo VC",
       col2: "SHEFA Holding",
@@ -182,7 +182,7 @@ export const es: Lang = {
   },
   ecosystem: {
       eyebrow:    "ECOSISTEMA",
-      subtitle:   "Somos un vehículo de inversión enfocado en respaldar y acelerar empresas que están transformando el retail, combinando la fortaleza del Grupo IRSA & Cresud con la agilidad de un modelo empresarial.",
+      subtitle:   "Somos un vehículo de inversión enfocado en respaldar y acelerar empresas que están transformando el retail, combinando la fortaleza del Grupo IRSA con la agilidad de un modelo empresarial.",
       h2a:        "La ",
       h2b:        "masa crítica",
       h2c:        " que potencia el ",

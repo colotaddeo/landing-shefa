@@ -60,7 +60,7 @@ export const en = {
       retailer:        "Retailer",
       clienteLabel:    "CLIENTE",
       retailerLabel:   "RETAILER",
-      marketplace:     "Marketplace",
+      marketplace:     "Big Platforms",
       intermediario:   "intermediary",
       conIntermediario:"with intermediary",
       conTucan:        "with TUCÁN",
@@ -94,7 +94,7 @@ export const en = {
    },
    vs: {
      eyebrow: "SHEFA STRUCTURE",
-     title: "Why a Public Holding, not a Private Fund?",
+     title: "Why is Shefa a holding company rather than a fund? And why will it go public?",
      subtitle: "Long-term value creation aligned with investor returns",
      col1: "VC Fund",
      col2: "SHEFA Holding",
@@ -180,7 +180,7 @@ export const en = {
   },
   ecosystem: {
      eyebrow:    "ECOSYSTEM",
-     subtitle:   "We are an investment vehicle focused on backing and accelerating companies that are transforming retail, combining the strength of the IRSA & Cresud Group with the agility of an entrepreneurial model.",
+      subtitle:   "We are an investment vehicle focused on backing and accelerating companies that are transforming retail, combining the strength of the IRSA Group with the agility of an entrepreneurial model.",
      h2a:        "The ",
      h2b:        "critical mass",
      h2c:        " powering ",
