@@ -26,7 +26,7 @@ export default function Nav() {
     <nav className="sticky top-0 z-50 border-b border-shefa-border bg-shefa-dark">
       <PageSection className="flex items-center justify-between py-5">
         <Link href="/">
-          <Image src="/shefa-logo.png" alt="SHEFA" height={36} width={36} className="rounded-lg" />
+          <Image src="/logoshefa.png" alt="SHEFA" height={36} width={36} className="rounded-lg" />
         </Link>
 
         <ul className="hidden md:flex gap-10 list-none">
