@@ -1,46 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import PageSection from "@/components/PageSection";
 
 export default function Hero() {
   const { t } = useLang();
   const { hero } = t;
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [src, setSrc] = useState<string | null>(null);
-  const [observed, setObserved] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const id = hero.videoId;
-          setSrc(
-            `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&loop=1&playlist=${id}`
-          );
-          observer.disconnect();
-          setObserved(true);
-        }
-      },
-      { threshold: 0.9 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (observed) {
-      const id = hero.videoId;
-      setSrc(
-        `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&loop=1&playlist=${id}`
-      );
-    }
-  }, [hero.videoId]);
+  const [ready, setReady] = useState(false);
 
   return (
     <section className="pt-[60px] pb-32">
@@ -81,38 +48,41 @@ export default function Hero() {
           </svg>
         </div>
 
-        {/* Video — loads on scroll, plays auto */}
-        <div ref={containerRef} className="mb-20 relative" style={{ maxHeight: '700px', aspectRatio: '16/9' }}>
-          {/* Glow effect — behind, no pointer interaction */}
+        {/* Video */}
+        <div className="mb-20 relative" style={{ maxHeight: "700px", aspectRatio: "16/9" }}>
+          {/* Glow border */}
           <div
             className="absolute -inset-0 rounded-xl"
             style={{
-              border: '2px solid rgba(48,188,219,0.5)',
-              boxShadow: '0 0 20px 4px rgba(48,188,219,0.25), 0 0 60px 8px rgba(48,188,219,0.1)',
-              filter: 'blur(0.5px)',
+              border: "2px solid rgba(48,188,219,0.5)",
+              boxShadow: "0 0 20px 4px rgba(48,188,219,0.25), 0 0 60px 8px rgba(48,188,219,0.1)",
+              filter: "blur(0.5px)",
               zIndex: 0,
-              pointerEvents: 'none',
+              pointerEvents: "none",
             }}
           />
-          {/* Video — on top, clickable */}
-          <div className="relative z-10 rounded-xl overflow-hidden">
-            {src && (
-              <iframe
-                src={src}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full"
-                style={{ aspectRatio: '16/9' }}
-              ></iframe>
-            )}
+
+          {/* Player */}
+          <div className="relative z-10 rounded-xl overflow-hidden w-full h-full">
+            <video
+              src="/videos/hero.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              onCanPlay={() => setReady(true)}
+              className="w-full h-full object-cover"
+            />
           </div>
-          {/* Placeholder — logo + SHEFA text */}
-          {!observed && (
-            <div className="absolute inset-0 z-20 flex items-start justify-center gap-4 pt-32 pointer-events-none">
-              <img src="/shefa-logo.png" alt="Shefa" className="w-12 h-12" />
-              <span className="text-4xl font-light tracking-[0.2em]" style={{ color: 'var(--shefa-text)' }}>SHEFA</span>
+
+          {/* Placeholder while video loads */}
+          {!ready && (
+            <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 pointer-events-none">
+              <img src="/logoshefa.png" alt="Shefa" className="w-12 h-12" />
+              <span className="text-4xl font-light tracking-[0.2em]" style={{ color: "var(--shefa-text)" }}>
+                SHEFA
+              </span>
             </div>
           )}
         </div>
