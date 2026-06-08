@@ -5,8 +5,9 @@ import { useLang } from "@/context/LanguageContext";
 import PageSection from "@/components/PageSection";
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const { hero } = t;
+  const videoSrc = lang === "es" ? "/videos/HERO - ES.mp4" : "/videos/HERO - EN.mp4";
   const [ready, setReady] = useState(false);
 
   return (
@@ -65,7 +66,7 @@ export default function Hero() {
           {/* Player */}
           <div className="relative z-10 rounded-xl overflow-hidden w-full h-full">
             <video
-              src="/videos/hero.mp4"
+              src={videoSrc}
               autoPlay
               muted
               loop
