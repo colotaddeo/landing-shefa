@@ -7,7 +7,7 @@ import PageSection from "@/components/PageSection";
 export default function Hero() {
   const { t, lang } = useLang();
   const { hero } = t;
-  const videoSrc = lang === "es" ? "/videos/HERO - ES.mp4" : "/videos/HERO - EN.mp4";
+  const videoSrc = lang === "es" ? "/videos/HERO%20-%20ES.mp4" : "/videos/HERO%20-%20EN.mp4";
   const [ready, setReady] = useState(false);
 
   return (
@@ -71,7 +71,7 @@ export default function Hero() {
               muted
               loop
               playsInline
-              preload="none"
+              preload="auto"
               onCanPlay={() => setReady(true)}
               className="w-full h-full object-cover"
             />
