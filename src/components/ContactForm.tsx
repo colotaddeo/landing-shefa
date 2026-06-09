@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { sendContactEmail } from "@/app/contact/actions";
 import { useLang } from "@/context/LanguageContext";
 import PageSection from "@/components/PageSection";
 import Nav from "@/components/Nav";
@@ -18,11 +17,33 @@ export default function ContactForm() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     setStatus("loading");
-    const result = await sendContactEmail(formData);
-    if (result.success) {
-      setStatus("success");
-      formRef.current?.reset();
-    } else {
+
+    const apiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL;
+    if (!apiUrl) {
+      console.warn("[ContactForm] NEXT_PUBLIC_CONTACT_API_URL not set");
+      setStatus("error");
+      return;
+    }
+
+    try {
+      const res = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          company: formData.get("company"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        formRef.current?.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
       setStatus("error");
     }
   }
