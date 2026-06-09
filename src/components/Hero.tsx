@@ -22,7 +22,7 @@ export default function Hero() {
           {hero.h1e}
         </h1>
 
-        <p className="text-[14px] text-shefa-muted font-light leading-[1.6] max-w-[480px] mb-6 mx-auto text-center">
+        <p className="text-[16px] md:text-[18px] text-shefa-muted font-light leading-[1.55] max-w-[680px] mb-6 mx-auto text-center">
           {hero.sub}
         </p>
 

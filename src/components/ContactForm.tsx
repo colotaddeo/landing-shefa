@@ -18,18 +18,12 @@ export default function ContactForm() {
     const formData = new FormData(e.currentTarget);
     setStatus("loading");
 
-    const apiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL;
-    if (!apiUrl) {
-      console.warn("[ContactForm] NEXT_PUBLIC_CONTACT_API_URL not set");
-      setStatus("error");
-      return;
-    }
-
     try {
-      const res = await fetch(apiUrl, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          access_key: "0230edd6-d107-4d36-b4f2-20805eb1d169",
           name: formData.get("name"),
           company: formData.get("company"),
           email: formData.get("email"),
@@ -37,7 +31,9 @@ export default function ContactForm() {
         }),
       });
 
-      if (res.ok) {
+      const data = await res.json();
+
+      if (data.success) {
         setStatus("success");
         formRef.current?.reset();
       } else {

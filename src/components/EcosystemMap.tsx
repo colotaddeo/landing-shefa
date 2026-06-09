@@ -40,15 +40,15 @@ function spokeEnd(deg: number, r = 476): [number, number] {
 }
 
 const SPOKES: { x2: number; y2: number; stroke: string; opacity: number }[] = [
-  { stroke: "#1e1e28", opacity: 1,    ...({ x2: spokeEnd(0)[0],   y2: spokeEnd(0)[1]   }) },
-  { stroke: "#1e1e28", opacity: 1,    ...({ x2: spokeEnd(180)[0], y2: spokeEnd(180)[1] }) },
-  { stroke: "#1e1e28", opacity: 1,    ...({ x2: spokeEnd(158)[0], y2: spokeEnd(158)[1] }) },
+  { stroke: "#2a2d35", opacity: 1,    ...({ x2: spokeEnd(0)[0],   y2: spokeEnd(0)[1]   }) },
+  { stroke: "#2a2d35", opacity: 1,    ...({ x2: spokeEnd(180)[0], y2: spokeEnd(180)[1] }) },
+  { stroke: "#2a2d35", opacity: 1,    ...({ x2: spokeEnd(158)[0], y2: spokeEnd(158)[1] }) },
   { stroke: "#30BCDB", opacity: 0.13, ...({ x2: spokeEnd(136)[0], y2: spokeEnd(136)[1] }) },
-  { stroke: "#1e1e28", opacity: 1,    ...({ x2: spokeEnd(114)[0], y2: spokeEnd(114)[1] }) },
-  { stroke: "#1e1e28", opacity: 1,    ...({ x2: spokeEnd(92)[0],  y2: spokeEnd(92)[1]  }) },
+  { stroke: "#2a2d35", opacity: 1,    ...({ x2: spokeEnd(114)[0], y2: spokeEnd(114)[1] }) },
+  { stroke: "#2a2d35", opacity: 1,    ...({ x2: spokeEnd(92)[0],  y2: spokeEnd(92)[1]  }) },
   { stroke: "#30BCDB", opacity: 0.13, ...({ x2: spokeEnd(70)[0],  y2: spokeEnd(70)[1]  }) },
-  { stroke: "#1e1e28", opacity: 1,    ...({ x2: spokeEnd(48)[0],  y2: spokeEnd(48)[1]  }) },
-  { stroke: "#1e1e28", opacity: 1,    ...({ x2: spokeEnd(26)[0],  y2: spokeEnd(26)[1]  }) },
+  { stroke: "#2a2d35", opacity: 1,    ...({ x2: spokeEnd(48)[0],  y2: spokeEnd(48)[1]  }) },
+  { stroke: "#2a2d35", opacity: 1,    ...({ x2: spokeEnd(26)[0],  y2: spokeEnd(26)[1]  }) },
 ];
 
 /* ── Orbital pill icons (position-agnostic) ───────────────────── */
@@ -265,7 +265,7 @@ export default function EcosystemMap() {
             <defs>
               <radialGradient id="eco-glow" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#30BCDB" stopOpacity="0.15" />
-                <stop offset="100%" stopColor="#08080d" stopOpacity="0" />
+                <stop offset="100%" stopColor="#11141c" stopOpacity="0" />
               </radialGradient>
               <filter id="iconPillGlow" x="-20%" y="-20%" width="140%" height="140%">
                 <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#30BCDB" floodOpacity="0.2" />
@@ -278,15 +278,15 @@ export default function EcosystemMap() {
             <ellipse cx="628" cy="596" rx="300" ry="300" fill="url(#eco-glow)" />
 
             {/* Inner rings — static */}
-            <circle className={styles.ring} cx={CX} cy={CY} r={RING2_R} fill="none" stroke="#1e1e28" strokeWidth="1" />
+            <circle className={styles.ring} cx={CX} cy={CY} r={RING2_R} fill="none" stroke="#2a2d35" strokeWidth="1" />
 {/* Outer ring */}
-            <circle className={styles.ring} cx={CX} cy={CY} r="476" fill="none" stroke="#1e1e28" strokeWidth="1" />
+            <circle className={styles.ring} cx={CX} cy={CY} r="476" fill="none" stroke="#2a2d35" strokeWidth="1" />
 
             {/* Radial spokes */}
             {SPOKES.map((s, i) => (
               <line
                 key={i}
-                className={s.stroke === "#1e1e28" ? styles.spoke : undefined}
+                className={s.stroke === "#2a2d35" ? styles.spoke : undefined}
                 x1={CX} y1={CY} x2={s.x2} y2={s.y2}
                 stroke={s.stroke}
                 strokeOpacity={s.opacity}
@@ -309,7 +309,7 @@ export default function EcosystemMap() {
             <rect
               className={styles.hub}
               x="526" y="498" width="204" height="200" rx="100"
-              fill="#0f0f16" stroke="#30BCDB" strokeWidth="1.5"
+              fill="#191c24" stroke="#30BCDB" strokeWidth="1.5"
             />
             <image href="/logoshefa.png" x="592" y="533" width="71" height="76" />
             <text
@@ -384,7 +384,7 @@ export default function EcosystemMap() {
                     <rect
                       className={styles.card}
                       x={0} y={0} width={W} height={H} rx="2"
-                      fill="#0f0f16" stroke="#1e1e28" strokeWidth="1"
+                      fill="#191c24" stroke="#2a2d35" strokeWidth="1"
                     />
                     <rect
                       x={14} y={8} width="25" height="25" rx="6"

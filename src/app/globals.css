@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --shefa-dark:   #08080d;
-  --shefa-card:   #0f0f16;
-  --shefa-border: #1e1e28;
+  --shefa-dark:   #11141c;
+  --shefa-card:   #191c24;
+  --shefa-border: #2a2d35;
   --shefa-text:   #e8eef0;
-  --shefa-muted:  #586470;
+  --shefa-muted:  #7a8494;
   --shefa-accent: #30BCDB;
   --shefa-hover:  #4DCDE8;
-  --barrier-card-bg:  rgba(15, 15, 22, 0.8);
-  --barrier-card-bg2: rgba(15, 15, 22, 0.9);
+  --barrier-card-bg:  rgba(25, 28, 36, 0.8);
+  --barrier-card-bg2: rgba(25, 28, 36, 0.9);
   --divider-alpha:    rgba(255, 255, 255, 0.08);
 }
 
