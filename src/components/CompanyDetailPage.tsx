@@ -30,6 +30,8 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
   const displayMetrics = (lang === "es" && company.metricsEs) ? company.metricsEs : company.metrics;
   const primaryAccent = ACCENT_BY_TAG[displayTags[0]] ?? "text-shefa-accent border-shefa-accent";
 
+  const aboutText = lang === "es" && company.aboutEs ? company.aboutEs : company.about;
+
   return (
     <>
       <Nav />
@@ -69,11 +71,14 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
           {/* Logo / Name */}
           <div className="mb-6">
             {logoSrc ? (
-              <img
-                src={logoSrc}
-                alt={company.name}
-                className={`${company.logoHeight ?? "h-16"} w-auto object-contain`}
-              />
+              <>
+                <h1 className="sr-only">{company.name}</h1>
+                <img
+                  src={logoSrc}
+                  alt={`${company.name} logo`}
+                  className={`${company.logoHeight ?? "h-16"} w-auto object-contain`}
+                />
+              </>
             ) : (
               <h1 className="font-serif text-[clamp(48px,6vw,80px)] leading-[1]">{company.name}</h1>
             )}
@@ -128,7 +133,7 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
               </h2>
             </div>
             <p className="text-[16px] text-shefa-muted font-light leading-[1.9] self-center">
-              {company.about}
+              {aboutText}
             </p>
           </div>
         </section>
@@ -208,12 +213,12 @@ export default function CompanyDetailPage({ company }: { company: CompanyData })
               <p className="text-[14px] text-shefa-muted font-light leading-[1.8] mb-6">
                 Reach out to learn more about this company and investment opportunities within the SHEFA ecosystem.
               </p>
-              <a
-                href="/contact"
+              <Link
+                href="/contact/"
                 className="inline-block text-[11px] tracking-[2px] uppercase text-shefa-accent border-b border-shefa-accent pb-px hover:text-shefa-hover hover:border-shefa-hover transition-colors"
               >
                 Get in touch →
-              </a>
+              </Link>
             </div>
           </div>
         </section>

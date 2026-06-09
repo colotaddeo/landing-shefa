@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+Host: https://shefa.holdings
+Sitemap: https://shefa.holdings/sitemap.xml

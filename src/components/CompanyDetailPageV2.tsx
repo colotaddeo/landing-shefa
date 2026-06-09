@@ -102,9 +102,11 @@ export default function CompanyDetailPageV2({ company, prevSlug, nextSlug }: { c
               )}
               {logoSrc ? (
                 <div className="mb-5">
+                  {/* Visually hidden h1 for SEO when logo replaces text heading */}
+                  <h1 className="sr-only">{company.name}</h1>
                   <Image
                     src={logoSrc}
-                    alt={company.name}
+                    alt={`${company.name} logo`}
                     width={200}
                     height={60}
                     className="object-contain h-12 md:h-14 w-auto"

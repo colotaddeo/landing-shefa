@@ -23,10 +23,10 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-shefa-border bg-shefa-dark">
+    <nav aria-label="Main navigation" className="sticky top-0 z-50 border-b border-shefa-border bg-shefa-dark">
       <PageSection className="flex items-center justify-between py-5">
-        <Link href="/">
-          <Image src="/logoshefa.png" alt="SHEFA" height={36} width={36} className="rounded-lg" />
+        <Link href="/" aria-label="SHEFA Holdings homepage">
+          <Image src="/logoshefa.png" alt="" height={36} width={36} className="rounded-lg" />
         </Link>
 
         <ul className="hidden md:flex gap-10 list-none">

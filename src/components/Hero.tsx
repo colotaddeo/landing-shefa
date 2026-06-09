@@ -74,13 +74,14 @@ export default function Hero() {
               preload="auto"
               onCanPlay={() => setReady(true)}
               className="w-full h-full object-cover"
+              aria-label="SHEFA Holdings — Retail, Blockchain and AI ecosystem video"
             />
           </div>
 
           {/* Placeholder while video loads */}
           {!ready && (
             <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 pointer-events-none">
-              <img src="/logoshefa.png" alt="Shefa" className="w-12 h-12" />
+              <img src="/logoshefa.png" alt="" className="w-12 h-12" />
               <span className="text-4xl font-light tracking-[0.2em]" style={{ color: "var(--shefa-text)" }}>
                 SHEFA
               </span>
