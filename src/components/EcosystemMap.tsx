@@ -234,7 +234,7 @@ export default function EcosystemMap() {
   }, []);
 
   return (
-    <section id="ecosystem" aria-labelledby="ecosystem-heading" className="py-28">
+    <section id="ecosystem" aria-labelledby="ecosystem-heading" className="py-28" style={{ scrollMarginTop: "120px" }}>
       <PageSection>
 
         {/* Section header */}
@@ -260,7 +260,7 @@ export default function EcosystemMap() {
              width="100%"
              xmlns="http://www.w3.org/2000/svg"
              aria-hidden="true"
-             style={{ display: "block", maskImage: "linear-gradient(to bottom, black 88%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 88%, transparent 100%)" }}
+             style={{ display: "block", maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 88%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 88%, transparent 100%)" }}
            >
             <defs>
               <radialGradient id="eco-glow" cx="50%" cy="50%" r="50%">

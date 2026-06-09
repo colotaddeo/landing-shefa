@@ -11,8 +11,11 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  /* margin: auto on the child centers the grid, but when overflow occurs
+     it goes to the bottom (end side) instead of the top — prevents top clipping */
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .tag {
@@ -49,7 +52,8 @@
   gap: 24px;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: auto;
   padding: 0 24px;
   position: relative;
   z-index: 10;
@@ -197,6 +201,39 @@
 .card:hover .cardArrow {
   opacity: 1;
   color: var(--shefa-text);
+}
+
+/* ── Short viewports (e.g. 1366×768 laptops): compact card internals ──── */
+@media (max-height: 750px) and (min-width: 769px) {
+  .sticky {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .cardsWrapper {
+    gap: 16px;
+  }
+
+  .card {
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .cardLogo {
+    height: 28px;
+  }
+
+  .logoImg {
+    max-height: 22px;
+  }
+
+  .cardMetric {
+    padding-top: 8px;
+  }
+
+  .metricNum {
+    font-size: 18px;
+  }
 }
 
 /* ── Mobile: ditch the scroll animation, show a static grid ──── */
