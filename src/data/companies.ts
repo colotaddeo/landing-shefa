@@ -143,13 +143,13 @@ export const COMPANIES: CompanyData[] = [
       website: "bouldertech.fi",
     },
     metrics: [
-      { num: "AI Agents", label: "Server as a Service" },
+      { num: "AI Agents", label: "Agent as a Service" },
       { num: "12",    label: "Active Issuances" },
       { num: "3",     label: "Closed Rounds" },
       { num: "ISO 27001", label: "Certified" },
     ],
     metricsEs: [
-      { num: "Agentes IA", label: "Servidor como Servicio" },
+      { num: "Agentes IA", label: "Agent as a Service" },
       { num: "12",    label: "Emisiones Activas" },
       { num: "3",     label: "Rondas Cerradas" },
       { num: "ISO 27001", label: "Certificado" },
