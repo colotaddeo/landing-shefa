@@ -7,7 +7,7 @@ import styles from "./Team.module.css";
 const PHOTOS: Record<string, string> = {
   "Ben Elsztain":      "/team/ben-elsztain.png",
   "Rodrigo Benzaquen": "/team/rodrigo-benzaquen.png",
-  "Ricardo Schulte":   "/team/ricardo-schulte.avif",
+  "Ricardo Schulte":   "/team/ricardo-schulte.png",
 };
 
 export default function Team() {
