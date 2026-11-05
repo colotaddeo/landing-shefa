@@ -255,9 +255,7 @@
   }
 
   .bgTitle {
-    font-size: clamp(48px, 14vw, 80px);
-    opacity: 0.15;
-    margin-bottom: 40px;
+    display: none;
   }
 
   .cardsWrapper {
