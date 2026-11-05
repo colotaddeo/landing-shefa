@@ -128,6 +128,29 @@ export const es: Lang = {
         },
       ],
     },
+  workplacePartner: {
+    eyebrow: "Partner",
+    line1: "Ecosistema",
+    line2Lead: "",
+    line2Accent: "Work-",
+    line3: "Place",
+    kicker: "Trabajá. Conectá. Crecé.",
+    body: "Desde tu oficina hasta un after office en la terraza, todo está pensado para que tu empresa evolucione todos los días.",
+    cards: [
+      {
+        title: "Espacios",
+        body: "**+8.000 m² construidos** para que tu empresa trabaje en un espacio de estándar superior. El lugar donde trabajás dice quién sos.",
+      },
+      {
+        title: "Experiencias",
+        body: "**+50 empresas** comparten el espacio y las oportunidades. Torneos de padel, after offices en la terraza y activaciones todos los días.",
+      },
+      {
+        title: "Eventos",
+        body: "Charlas, lanzamientos, networking y after offices para **más de 3.000 personas** en la comunidad.",
+      },
+    ],
+  },
   portfolio: {
     tag:         "PORTFOLIO",
     h2:          "Nuestro Portfolio",

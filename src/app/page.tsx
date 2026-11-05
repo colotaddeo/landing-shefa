@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import EcosystemMap from "@/components/EcosystemMap";
 import Thesis from "@/components/Thesis";
 import VsSection from "@/components/VsSection";
+import WorkplacePartner from "@/components/WorkplacePartner";
 import Portfolio from "@/components/Portfolio";
 import Team from "@/components/Team";
 import CTA from "@/components/CTA";
@@ -49,6 +50,7 @@ export default function Home() {
       <SectionDivider />
       <Thesis />
       <VsSection />
+      <WorkplacePartner />
       <Portfolio />
       <Team />
       <CTA />

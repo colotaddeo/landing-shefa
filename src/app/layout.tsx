@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, DM_Serif_Display, Kalam } from "next/font/google";
+import { Inter, DM_Serif_Display, Kalam, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   variable: "--font-inter",
 });
@@ -25,6 +25,13 @@ const kalam = Kalam({
   weight: ["400"],
   display: "swap",
   variable: "--font-kalam",
+});
+
+const barlow = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["800", "900"],
+  display: "swap",
+  variable: "--font-barlow",
 });
 
 export const viewport: Viewport = {
@@ -113,21 +120,17 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/icon.svg", type: "image/svg+xml" }],
-    apple: "/apple-touch-icon.png",
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/safari-pinned-tab.svg",
-        color: "#30BCDB",
-      },
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
     ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmSerif.variable} ${kalam.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${dmSerif.variable} ${kalam.variable} ${barlow.variable}`} suppressHydrationWarning>
       <body className="bg-shefa-dark text-shefa-text antialiased font-sans">
         <ThemeProvider>
           <LanguageProvider>

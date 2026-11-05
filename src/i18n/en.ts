@@ -126,6 +126,29 @@ export const en = {
        },
      ],
    },
+  workplacePartner: {
+    eyebrow: "Partner",
+    line1: "Ecosystem",
+    line2Lead: "",
+    line2Accent: "Work-",
+    line3: "Place",
+    kicker: "Work. Connect. Grow.",
+    body: "From your office to an after office on the terrace, everything is designed so your company evolves every day.",
+    cards: [
+      {
+        title: "Spaces",
+        body: "**+8,000 m² built** so your company works in a space of superior standard. The place you work says who you are.",
+      },
+      {
+        title: "Experiences",
+        body: "**+50 companies** share the space and the opportunities. Padel tournaments, terrace after offices and activations every day.",
+      },
+      {
+        title: "Events",
+        body: "Talks, launches, networking and after offices for **over 3,000 people** in the community.",
+      },
+    ],
+  },
   portfolio: {
     tag:         "PORTFOLIO",
     h2:          "Our companies",
