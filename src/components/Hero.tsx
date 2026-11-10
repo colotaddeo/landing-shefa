@@ -7,7 +7,7 @@ import PageSection from "@/components/PageSection";
 export default function Hero() {
   const { t, lang } = useLang();
   const { hero } = t;
-  const videoSrc = lang === "es" ? "/videos/HER0%20-%20ES.mp4" : "/videos/HERO%20-%20EN.mov";
+  const videoSrc = lang === "es" ? "/videos/HERO%20-%20ES.mp4" : "/videos/HERO%20-%20EN.mp4";
   const [ready, setReady] = useState(false);
 
   return (
