@@ -68,7 +68,7 @@ export default function WorkplacePartner() {
   return (
     <>
       <div className="h-px bg-shefa-border max-w-[1200px] mx-auto" />
-      <section id="workplace" aria-labelledby="workplace-heading" className="scroll-mt-24 bg-shefa-dark py-28">
+      <section id="workplace" aria-labelledby="workplace-heading" className="scroll-mt-24 bg-shefa-dark py-16 md:py-28">
         <PageSection>
           <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-shefa-muted">
             {wp.eyebrow}

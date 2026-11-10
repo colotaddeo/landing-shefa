@@ -159,30 +159,73 @@
 
 @media (max-width: 900px) {
   .stage {
-    --panel-w: 76px;
-    --panel-gap: 12px;
+    --panel-w: 64px;
+    --panel-gap: 10px;
+    width: 100%;
   }
 
   .inner,
   .panel {
-    border-radius: 22px;
+    border-radius: 20px;
   }
 
   .layout {
     grid-template-columns: 1fr;
-    padding: 4px 6px 0;
-    gap: 22px;
+    padding: 2px 2px 0;
+    gap: 18px;
   }
 
   .display {
-    font-size: clamp(52px, 16vw, 80px);
+    font-size: clamp(34px, 10.5vw, 52px);
   }
 
+  .lead {
+    font-size: 0.72em;
+  }
+
+  /* Work- / Place siguen más grandes que Ecosistema, pero entran en el ancho */
   .display > span:not(.lead) {
-    font-size: 1em;
+    font-size: 1.22em;
+  }
+
+  .kicker {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+
+  .body {
+    max-width: none;
+    font-size: 14px;
+  }
+
+  .cards {
+    gap: 10px;
+  }
+
+  .card {
+    padding: 14px 14px 12px;
+    border-radius: 16px;
+  }
+
+  .cardTop {
+    gap: 10px;
+  }
+
+  .cardTitle {
+    font-size: 15px;
+  }
+
+  .cardBody {
+    max-width: none;
+    font-size: 13.5px;
+  }
+
+  /* Las métricas en naranja pueden partirse si no entran en una línea */
+  .hl {
+    white-space: normal;
   }
 
   .inner {
-    padding: 14px 14px 20px;
+    padding: 16px 14px 16px;
   }
 }
